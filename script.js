@@ -30,3 +30,16 @@ window.addEventListener("resize", () => {
     navLinks.classList.remove("mobile");
   }
 });
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = this.name.value;
+  const email = this.email.value;
+  const message = this.message.value;
+
+  const subject = `Portfolio Contact - Message from ${name}`;
+  const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+
+  window.location.href = `mailto:bmc1793@hotmail.com?subject=${subject}&body=${body}`;
+});
